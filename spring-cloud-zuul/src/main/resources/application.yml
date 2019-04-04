@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-cloud-zuul
+
+server:
+  port: 8769
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:                                        #配置路由节点
+    api-a:
+      path: /api/a/**                            #**即全目录匹配
+      serviceId: spring-cloud-web-admin-ribbon   #以 /api/a 开头的请求都转发给 hello-spring-cloud-web-admin-ribbon
+    api-b:
+      path: /api/b/**
+      serviceId: spring-cloud-web-admin-feign    #以 /api/b 开头的请求都转发给 hello-spring-cloud-web-admin-feign
