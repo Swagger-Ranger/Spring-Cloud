@@ -4,4 +4,4 @@ spring:
       uri: http://localhost:8888      #配置中心的地址
       name: web-admin-feign           #服务名
       label: master                   #分支名
-      profile: dev                    #使用哪个配置，就是云配置中文件名结尾后缀
+      profile: prod                   #启动jar包时使用 --spring.profiles.active=prod 参数来激活使用配置文件

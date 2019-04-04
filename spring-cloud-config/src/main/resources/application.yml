@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-cloud-config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/Swagger-Ranger/spring-cloud-config   #仓库地址
+          search-paths: respo/hello-spring-cloud                       #仓库目录
+          username: Swagger-Ranger
+          password: lwx425876github
+
+server:
+  port: 8888    #注意这里的端口8888是默认的不能改，如果要修改端口则在相同目录下新建bootstrap.yml 设置端口server.port=PORT
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
