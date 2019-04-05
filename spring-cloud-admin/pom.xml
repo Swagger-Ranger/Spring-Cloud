@@ -10,10 +10,10 @@
         <relativePath>../spring-cloud-dependencies/pom.xml</relativePath>
     </parent>
 
-    <artifactId>spring-cloud-config</artifactId>
+    <artifactId>spring-cloud-admin</artifactId>
     <packaging>jar</packaging>
 
-    <name>spring-cloud-config</name>
+    <name>spring-cloud-admin</name>
     <url></url>
     <inceptionYear>2019-Now</inceptionYear>
 
@@ -29,6 +29,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
@@ -36,29 +40,26 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- Spring Boot End -->
 
-        <!-- Spring Cloud Begin -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-        <!-- Spring Cloud End -->
-
-        <!--admin监控客户端 start-->
+        <!--admin监控服务端 start-->
         <dependency>
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
         </dependency>
         <dependency>
             <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
         </dependency>
-        <!--admin监控客户端 end-->
+        <!--admin 监控服务端 end-->
+
+        <!-- Spring Boot End -->
+
+        <!-- Spring Cloud Begin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <!-- Spring Cloud End -->
     </dependencies>
 
     <build>
@@ -67,7 +68,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.outlook.liufei32.spring.cloud.config.ConfigApplication</mainClass>
+                    <mainClass>com.outlook.liufei32.spring.cloud.admin.AdminApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

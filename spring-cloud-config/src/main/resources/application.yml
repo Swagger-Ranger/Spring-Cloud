@@ -1,6 +1,10 @@
 spring:
   application:
     name: spring-cloud-config
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
   cloud:
     config:
       label: master
@@ -10,6 +14,7 @@ spring:
           search-paths: respo/hello-spring-cloud                       #仓库目录
           username: Swagger-Ranger
           password: lwx425876github
+
 
 server:
   port: 8888    #注意这里的端口8888是默认的不能改，如果要修改端口则在相同目录下新建bootstrap.yml 设置端口server.port=PORT
