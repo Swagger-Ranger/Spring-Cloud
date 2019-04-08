@@ -12,8 +12,8 @@ spring:
         git:
           uri: https://github.com/Swagger-Ranger/spring-cloud-config   #仓库地址
           search-paths: respo/hello-spring-cloud                       #仓库目录
-          username: Swagger-Ranger
-          password: lwx425876github
+          username: 
+          password: 
 
 
 server:
